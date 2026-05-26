@@ -11,7 +11,7 @@ public class TransactionStrategy {
         this.strategy = strategy;
     }
 
-    public void execute(FruitTransaction transaction) {
-        strategy.get(transaction.getOperation()).execute(transaction);
+    public void execute(FruitTransaction transaction, Map<String, Integer> fruits) {
+        strategy.get(transaction.getOperation()).execute(transaction, fruits);
     }
 }

@@ -1,5 +1,6 @@
 package core.basesyntax.service.impl;
 
+import core.basesyntax.db.Storage;
 import core.basesyntax.model.FruitTransaction;
 import core.basesyntax.service.ShopService;
 import core.basesyntax.strategy.handler.TransactionStrategy;
@@ -16,7 +17,7 @@ public class ShopServiceImpl implements ShopService {
     public void process(List<FruitTransaction> transactions) {
         for (FruitTransaction transaction : transactions) {
             checkTransaction(transaction);
-            strategy.execute(transaction);
+            strategy.execute(transaction, Storage.getFruits());
         }
     }
 

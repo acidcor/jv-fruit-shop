@@ -29,7 +29,7 @@ public class Main {
         // 1. Read the data from the input CSV file
         DataReader fileReader = new DataReaderImpl();
         List<String> inputReport = fileReader
-                .read("src/main/java/core/basesyntax/resources/toReport.csv");
+                .read("src/main/resources/toReport.csv");
 
         // 2. Convert the incoming data into FruitTransactions list
         DataParser dataParser = new DataParserImpl();
@@ -54,6 +54,6 @@ public class Main {
         // 6. Write the received report into the destination file
         DataWriter fileWriter = new DataWriterImpl();
         fileWriter.write(resultingReport,
-                "src/main/java/core/basesyntax/resources/finalReport.csv");
+                "src/main/resources/finalReport.csv");
     }
 }

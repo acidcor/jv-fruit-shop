@@ -8,7 +8,7 @@ public class ReportGeneratorImpl implements ReportGenerator {
     @Override
     public String getReport() {
         StringBuilder sb = new StringBuilder("fruit,quantity").append("\n");
-        for (Map.Entry<String, Integer> item : Storage.fruitTransactions.entrySet()) {
+        for (Map.Entry<String, Integer> item : Storage.getFruits().entrySet()) {
             sb.append(item.getKey()).append(",").append(item.getValue()).append("\n");
         }
         return sb.toString();
